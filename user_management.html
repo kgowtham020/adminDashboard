@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management - Bluestock</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-header">
+          <img src="../logo.svg" alt="Bluestock Logo" class="img-fluid">
+          <h4>Admin Dashboard</h4>
+        </div>
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">
+              <i class="fas fa-tachometer-alt me-2"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ipo_management.html">
+              <i class="fas fa-briefcase me-2"></i>
+              <span>IPO Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="user_management.html">
+              <i class="fas fa-users me-2"></i>
+              <span>User Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="analytics.html">
+              <i class="fas fa-chart-line me-2"></i>
+              <span>Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold" style="color: var(--primary-color);">User Management</h1>
+        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+          <i class="fas fa-plus me-2"></i>Add New User
+        </button>
+      </div>
+
+      <!-- User Table -->
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">User Listings</h5>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="user-table">
+                    <!-- User data will be dynamically inserted here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add User Modal -->
+      <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="addUserForm">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="role" class="form-label">Role</label>
+                  <select class="form-select" id="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="addUser()">Add User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

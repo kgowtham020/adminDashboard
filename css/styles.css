@@ -1,0 +1,243 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --sidebar-width: 250px;
+    --gradient: linear-gradient(135deg, #3498db, #2c3e50);
+    --success-color: #28a745;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f6fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    background: var(--primary-color);
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .sidebar-header img {
+    max-width: 80px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-header img:hover {
+    transform: scale(1.1);
+  }
+  
+  .sidebar-header h4 {
+    color: white;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  
+  .nav-link {
+    color: rgba(255,255,255,0.9);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateX(5px);
+  }
+  
+  main {
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  
+  .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .card-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  
+  .btn-outline-primary {
+    border-radius: 25px;
+    padding: 10px 20px;
+    border-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.05);
+  }
+  
+  .metric-card .card-body {
+    padding: 25px;
+    background: var(--gradient);
+    color: white;
+  }
+  
+  .metric-card .card-title {
+    color: white;
+    opacity: 0.9;
+  }
+  
+  .metric-card .card-text {
+    color: white;
+    font-size: 2rem;
+  }
+  
+  /* Table Enhancements */
+  .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+  }
+  
+  .table thead th {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    border: none;
+  }
+  
+  .table tbody tr {
+    transition: all 0.3s ease;
+  }
+  
+  .table tbody tr:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .table-responsive {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  /* Action Buttons */
+  .action-btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .action-btn.edit {
+    background: var(--warning-color);
+    color: white;
+  }
+  
+  .action-btn.delete {
+    background: var(--danger-color);
+    color: white;
+  }
+  
+  .action-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Modal Enhancements */
+  .modal-content {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .modal-header {
+    background: var(--gradient);
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .modal-title {
+    font-weight: 600;
+  }
+  
+  .btn-primary {
+    background: var(--gradient);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .btn-secondary {
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Chart Enhancements for Analytics Page */
+  canvas {
+    max-height: 300px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 80px;
+    }
+    main {
+      margin-left: 80px;
+    }
+    .sidebar-header h4 {
+      display: none;
+    }
+    .nav-link span {
+      display: none;
+    }
+  }
